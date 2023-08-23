@@ -12,6 +12,8 @@ Cualquier conexión adicional de sockets, se puede hacer en el archivo models/so
 
 ## git init, git add ., git commit -m "first commit"
 
+## git push heroku master
+
 ## Heroku cli
 
 ### heroku logs -1000 --tail
