@@ -34,42 +34,19 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.2/socket.io.js" integrity="sha512-jMNwWSmjje4fjYut9MBGKXw5FZA6D67NHAuC9szpjbbjg51KefquNfvn4DalCbGfkcv/jHsHnPo1o47+8u4biA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        // Conexión con el socket server
-        const socket = io('https://react-socket-server-app.herokuapp.com/');
-
-        const formulario = document.querySelector('#my-form')
-        const mensajes = document.querySelector('#my-messages')
-        const inputMessage = document.querySelector("#txt-message")
-
-        formulario.addEventListener("submit", (ev) => {
-            ev.preventDefault()
-            console.log('first')
-            
-            socket.emit('mensaje-to-server', {
-                msg: inputMessage.value
-            })
-        })
-
-        /// Para emitir
-         
-        // setTimeout(() => {
-        //    const data = {
-        //        msg:'Cliente',
-        //        name: 'Francisco'
-        //    }
-        //    socket.emit('mensaje-to-server', { data });
-        //    }, 2000); 
     
-        
-        // Para escuchar
-        
-       socket.on('mensaje-from-server', (data) => {
-            // callback a ejecutar
-            console.log({msg:data})
-            mensajes.innerHTML += `<li>${data.msg}</li>` 
-        });
-        
+                // Conexión con el socket server
+                const socket = io('http://localhost:8080');
 
+        
+                /// Para emitir
+                // socket.emit('mensaje-to-server', { data });
+                
+                // Para escuchar
+                socket.on('mensaje-from-server', (data) => {
+                    // callback a ejecutar
+                });
+                 
     </script>
     
 </body>

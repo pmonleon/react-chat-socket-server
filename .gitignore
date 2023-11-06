@@ -1,1 +1,11 @@
 node_modules/
+
+# Ignorar todos los archivos .env
+.env
+
+# Ignorar archivos específicos
+.env.production
+.env.development
+
+# Ignorar todos los archivos que terminen en .env
+*.env
